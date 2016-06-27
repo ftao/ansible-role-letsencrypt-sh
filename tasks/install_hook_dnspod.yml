@@ -1,0 +1,9 @@
+---
+
+- name: install dnspod hook
+  git: repo={{ letsencrypt_sh_hook_dnspod_repo }}
+       dest={{ letsencrypt_sh_working_dir }}/hooks/dnspod
+
+- name: install dependency for dnspod hook
+  pip: requirements={{ letsencrypt_sh_working_dir }}/hooks/dnspod/requirements-python-2.txt
+       virtualenv={{ letsencrypt_sh_working_dir }}/venv

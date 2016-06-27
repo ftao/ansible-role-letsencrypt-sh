@@ -1,0 +1,17 @@
+---
+# Install letsencrypt.sh
+
+- name: ensure working dir exists
+  file: path={{ letsencrypt_sh_working_dir }}/{{ item }} state=directory
+  with_items:
+    - hooks
+    - certs
+
+- name: download & letsencrypt.sh
+  get_url: url={{letsencrypt_sh_url }}  
+           dest={{ letsencrypt_sh_bin }}
+
+- name: make letsencrypt.sh executable
+  file: path={{letsencrypt_sh_bin }}
+        state=file
+        mode=755

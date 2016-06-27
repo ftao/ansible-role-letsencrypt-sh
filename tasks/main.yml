@@ -1,0 +1,9 @@
+---
+# tasks file for .
+
+- include: install.yml
+
+- include: install_hook_dnspod.yml
+  when: letsencrypt_sh_hook_name == "dnspod"
+
+- include: certs.yml

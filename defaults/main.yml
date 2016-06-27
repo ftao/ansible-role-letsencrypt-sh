@@ -1,0 +1,24 @@
+---
+# defaults file for .
+
+letsencrypt_sh_version: 'v0.2.0'
+letsencrypt_sh_url: "https://raw.githubusercontent.com/lukas2511/letsencrypt.sh/{{ letsencrypt_sh_version }}/letsencrypt.sh"
+
+letsencrypt_sh_working_dir: '/opt/letsencrypt_sh'
+letsencrypt_sh_bin: '{{ letsencrypt_sh_working_dir }}/letsencrypt.sh'
+
+letsencrypt_cert_domains: []
+
+#letsencrypt_domains:
+#  - email: "hostmaster@exmaple.com"
+#    domains: ["example.com", "www.example.com"]
+#  - email: "git@exmaple.com"
+#    domains: ["git.example.com", "gitlab.example.com"]
+
+
+letsencrypt_sh_hook_name: 'dnspod'
+
+letsencrypt_sh_hook_dnspod_repo: "https://github.com/ftao/letsencrypt-dnspod-hook.git"
+letsencrypt_sh_hook_dnspod_login_token: ""
+letsencrypt_sh_hook_dnspod_dns_servers: ""
+

@@ -1,0 +1,5 @@
+export PATH="{{ letsencrypt_sh_working_dir }}/venv/bin:$PATH"
+{% if letsencrypt_sh_hook_name == "dnspod" %}
+export DNSPOD_LOGIN_TOKEN="{{ letsencrypt_sh_hook_dnspod_login_token }}"
+export DNSPOD_DNS_SERVERS="{{ letsencrypt_sh_hook_dnspod_dns_servers }}"
+{% endif %}

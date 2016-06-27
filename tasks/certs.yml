@@ -1,0 +1,11 @@
+---
+
+- name: setup domains.txt
+  template: src=domains.txt.j2 dest={{ letsencrypt_sh_working_dir }}/domains.txt
+    
+- name: setup config
+  template: src=config.j2 dest={{ letsencrypt_sh_working_dir }}/config
+
+- name: generate & update certs
+  shell: ./letsencrypt.sh -c -f config -t dns-01 -k "hooks/{{ letsencrypt_sh_hook_name }}/hook.py"
+         chdir={{ letsencrypt_sh_working_dir }}
